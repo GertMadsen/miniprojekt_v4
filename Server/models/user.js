@@ -11,7 +11,7 @@ var UserSchema = new Schema({
   lastName: String,
   userName : {type: String,required:true,unique:true},
   password : {type: String,required:true},
-  //email: {type: String, required: true},
+  email: {type: String, required: true},
   job: [JobSchema],
   created : {type: Date, default: Date.now},
   lastUpdated : Date

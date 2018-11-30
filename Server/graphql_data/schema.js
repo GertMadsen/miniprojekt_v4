@@ -18,6 +18,7 @@ const typeDefs = `
         firstName: String
         lastName: String
         password: String
+        email: String
         job: [Job]
         created: DateTime
         lastUpdated: DateTime       
@@ -39,6 +40,32 @@ const typeDefs = `
         lastUpdated: DateTime 
     }
 
+    type Friend {
+        username: String
+        longitude: Float
+        latitude: Float
+    }
+
+    type Friends {
+        friends: [Friend]
+    }
+
+    input loginInput {
+        username: String! 
+        password: String! 
+        longitude: Float! 
+        latitude: Float!
+        distance: Int!
+    }
+
+    input newUser {
+        firstName: String!
+        lastName: String! 
+        userName: String!
+        password: String!
+        email: String!
+    }
+
     type Query {
         getUserById(id: ID!): User
         getUserByUserName(userName: String!): User
@@ -46,7 +73,11 @@ const typeDefs = `
         getLocationBlogById(id: ID!): LocationBlog
         getLocationBlogByInfo(info: String!): LocationBlog
         getAllLocationBlogs: [LocationBlog]
-        
+        loginToFindNearbyFriends(input: loginInput!): Friends     
+    }
+
+    type Mutation {
+        addUser(input: newUser!): User
     }
 
   `;

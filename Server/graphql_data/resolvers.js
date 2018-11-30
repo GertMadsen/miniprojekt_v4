@@ -1,6 +1,7 @@
 var { DateTime } = require('@okgrow/graphql-scalars');
 var userFacade = require("../facades/userFacade");
 var blogFacade = require("../facades/blogFacade");
+var loginFacade = require("../facades/loginFacade");
 
 const resolvers = {
 
@@ -30,9 +31,21 @@ const resolvers = {
 
         getAllLocationBlogs: () => {
             return blogFacade.getAllBlogs();
+        },
+
+        loginToFindNearbyFriends: (root, {input}) => {
+            return loginFacade.login(input.username,input.password,input.longitude,input.latitude,input.distance);
         }
         
+    },
+
+    Mutation: {
+        addUser: (root, {input}) => {
+            return userFacade.addUser(input.firstName, input.lastName, input.userName, input.password, input.email);        
+        },
+
     }
+
 };
 
 module.exports = resolvers;
