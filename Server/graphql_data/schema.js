@@ -1,7 +1,13 @@
 
 var  resolvers = require('./resolvers');
 var { makeExecutableSchema } = require('graphql-tools');
+var mongoose = require("mongoose");
 
+const { ObjectId } = mongoose.Types;
+
+ObjectId.prototype.valueOf = function() {
+  return this.toString();
+};
 
 const typeDefs = `
     scalar DateTime
