@@ -44,6 +44,14 @@ const resolvers = {
             return userFacade.addUser(input.firstName, input.lastName, input.userName, input.password, input.email);        
         },
 
+        addLocationBlog: (root, {input}) => {
+            return blogFacade.addBlog(input.info,input.author,input.longitude,input.latitude);        
+        },
+
+        likeBlog: (root, {input}) => {
+            return blogFacade.likeLocationBlog(input.blogID, input.userID);
+        },
+
     }
 
 };

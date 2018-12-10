@@ -72,6 +72,18 @@ const typeDefs = `
         email: String!
     }
 
+    input newLocationBlog {
+        info: String!
+        author: ID!
+        longitude: Float! 
+        latitude: Float!
+    }
+
+    input likeInput {
+        blogID: ID
+        userID: ID
+    }
+
     type Query {
         getUserById(id: ID!): User
         getUserByUserName(userName: String!): User
@@ -84,7 +96,10 @@ const typeDefs = `
 
     type Mutation {
         addUser(input: newUser!): User
+        addLocationBlog(input: newLocationBlog!): LocationBlog
+        likeBlog(input: likeInput!): LocationBlog
     }
+
 
   `;
 
