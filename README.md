@@ -11,5 +11,6 @@ https://www.ramsbone.dk/graphQL
 Der findes en Apollo Client som er lavet som en separat React App.
 
 Vi fået implementeret en del Apollo queries som benytter GraphQL endpointet,
+
 men på grund af tidspres har vi ikke fået lavet mutations.
 
