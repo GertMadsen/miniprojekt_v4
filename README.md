@@ -3,6 +3,7 @@
 
 ## GraphQL endpoint:
 Der er implementeret et GraphQL endpoint.
+
 Dette er en del af den allerede eksisterende server og kan ses deployed på:
 https://www.ramsbone.dk/graphQL
 
