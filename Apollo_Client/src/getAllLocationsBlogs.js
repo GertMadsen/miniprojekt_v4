@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 
 //Each of the examples uses their own server, you need to find the URI's for each
 const client = new ApolloClient({
-  uri: "http://localhost:3000/graphql"
+  uri: "https://www.ramsbone.dk/graphQL"
 });
 
 const BLOGS_QUERY = gql`
